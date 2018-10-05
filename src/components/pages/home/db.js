@@ -1,5 +1,6 @@
-import { namespaced } from "mutations";
+import { namespaced } from 'mutations';
 
+//namespaced pro gragabe ddos dados da store
 export const mutations = {
   setItems: ({ items }) =>
     namespaced({
@@ -9,7 +10,7 @@ export const mutations = {
 
 export default props => ({
   load: () =>
-    fetch("https://api.github.com/repositories")
+    fetch('https://api.github.com/repositories')
       .then(response => response.json())
       .then(items => ({ mutation: mutations.setItems({ items }) })),
   search: ({ value }) =>
@@ -21,8 +22,8 @@ export default props => ({
       window.setTimeout(
         () =>
           new Date().getTime() % 2 === 0
-            ? resolve("fake message from server")
-            : reject("lol nope, you failed"),
+            ? resolve('fake message from server')
+            : reject('lol nope, you failed'),
         2000
       )
     )

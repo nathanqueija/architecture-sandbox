@@ -1,4 +1,5 @@
-import styled from "react-emotion/macro";
+// para criar seletores no css
+import styled from 'react-emotion/macro';
 
 export default component => styled(component)`
   background: black;
